@@ -4,22 +4,22 @@ import { useTheme } from '@/context/ThemeContext';
 
 const projects = [
   {
-    title: 'TO-DO List Website',
-    desc: 'A full-stack task management app with Firebase authentication, real-time data syncing, and secure payment integration for premium features',
-    tech: ['React', 'Firebase', 'Tailwind', 'Javascript'],
-    icon: '🛒',
+    title: 'Full-Stack Budget Tracker',
+    desc: 'A full-stack budget tracking web application enabling users to manage income, expenses, and financial goals, with AI-powered insights that analyse spending patterns and generate personalised budgeting recommendations.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'OpenAI API'],
+    icon: '💰',
   },
   {
     title: 'Personal Website',
-    desc: 'An intelligent expense tracking application powered by OpenAI that categorizes spending, generates insights, and helps users manage their finances',
+    desc: 'Developed and deployed a full-stack personal portfolio website using Next.js and React, with responsive UI components and interactive features including custom navigation and dynamic content.',
     tech: ['React', 'TypeScript', 'Tailwind', 'HTML'],
     icon: '✓',
   },
   {
-    title: 'Budget Tracker',
-    desc: 'AI-powered portfolio website generator for developers',
-    tech: ['TypeScript', 'OpenAI', 'Node.js'],
-    icon: '🎨',
+    title: 'Stronger Brains App',
+    desc: 'Collaborated in a team using agile practices to design and develop a mobile/web application for Stronger Brains, focused on improving user engagement and accessibility, with a React front-end and custom database backend.',
+    tech: ['JavaScript', 'React', 'SQL', 'BrainHQ API'],
+    icon: '🧠',
   },
   {
     title: 'AirBRB Website',

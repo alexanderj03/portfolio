@@ -8,7 +8,7 @@ function scrollToSection(sectionId: string) {
   element?.scrollIntoView({ behavior: 'smooth' });
 }
 
-export default function Hero() {
+export default function Home() {
   const { isDarkMode } = useTheme();
   const [scrollY, setScrollY] = useState(0);
   const [isMounted, setIsMounted] = useState(false);

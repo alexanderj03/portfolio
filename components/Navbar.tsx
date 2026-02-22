@@ -6,6 +6,10 @@ import { useTheme } from '@/context/ThemeContext';
 const NAV_ITEMS = ['Home', 'About', 'Experience', 'Projects', 'Contact'];
 
 function scrollToSection(sectionId: string) {
+  if (sectionId === 'home') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
   const element = document.getElementById(sectionId);
   element?.scrollIntoView({ behavior: 'smooth' });
 }

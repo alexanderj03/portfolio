@@ -86,7 +86,7 @@ export default function Experience() {
   );
 }
 
-// ── Reusable timeline sub-component ──────────────────────────────────────────
+// timeline sub-component
 
 type WorkItem = {
   company: string;
