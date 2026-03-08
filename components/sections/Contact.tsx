@@ -85,8 +85,11 @@ export default function Contact() {
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 px-6">
       <div className="max-w-4xl mx-auto w-full text-center">
-        <h2 className="text-5xl font-bold mb-8">Get In Touch</h2>
-        <p className={`text-xl mb-12 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+        <div className="flex flex-col items-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center">Get In Touch</h2>
+          <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
+        </div>
+        <p className={`text-center mb-16 text-sm tracking-widest uppercase font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
           I'm always open to new opportunities and interesting projects. Let's connect!
         </p>
 

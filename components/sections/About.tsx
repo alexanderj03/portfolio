@@ -8,7 +8,10 @@ export default function About() {
   return (
     <section id="about" className="min-h-screen flex items-center py-20 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-5xl font-bold mb-16 text-center">About Me</h2>
+        <div className="flex flex-col items-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center">About Me</h2>
+          <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
+        </div>
         <div className="grid md:grid-cols-[300px_1fr] gap-16 items-start">
           {/* Profile Card with Tags */}
           <div className="space-y-6">

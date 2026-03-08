@@ -35,7 +35,10 @@ export default function Projects() {
   return (
     <section id="projects" className="min-h-screen flex items-center py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="text-5xl font-bold mb-12 text-center">Featured Projects</h2>
+        <div className="flex flex-col items-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center">Featured Projects</h2>
+          <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
+        </div>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div
