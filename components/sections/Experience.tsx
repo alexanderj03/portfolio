@@ -59,16 +59,16 @@ export default function Experience() {
   const { isDarkMode } = useTheme();
 
   return (
-    <section id="experience" className="min-h-screen flex items-center py-20 px-4 sm:px-6">
+    <section id="experience" className="min-h-screen flex items-center py-20 px-4 md:px-6">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center">Resume</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Resume</h2>
         <p className={`text-center mb-16 text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
           Here are my work experiences and education.
         </p>
 
         {/* Work Experience */}
         <div className="mb-20">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h3 className="text-2xl md:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
             Work Experience
           </h3>
           <Timeline items={workExperience} icon="💼" isDarkMode={isDarkMode} type="work" />
@@ -76,7 +76,7 @@ export default function Experience() {
 
         {/* Education */}
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h3 className="text-2xl md:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
             Education
           </h3>
           <Timeline items={education} icon="🎓" isDarkMode={isDarkMode} type="education" />
@@ -116,12 +116,12 @@ function Timeline({ items, icon, isDarkMode, type }: TimelineProps) {
     <div className="relative">
       {/* Vertical line — on mobile sits left-aligned, on desktop centered */}
       <div
-        className={`absolute left-5 sm:left-1/2 sm:-translate-x-1/2 w-1 h-full ${
+        className={`absolute left-5 md:left-1/2 md:-translate-x-1/2 w-1 h-full ${
           isDarkMode ? 'bg-slate-700' : 'bg-gray-300'
         }`}
       />
 
-      <div className="space-y-10 sm:space-y-12">
+      <div className="space-y-10 md:space-y-12">
         {items.map((item, idx) => {
           const isLeft = item.side === 'left';
           const title =
@@ -136,7 +136,7 @@ function Timeline({ items, icon, isDarkMode, type }: TimelineProps) {
           return (
             <div key={idx}>
               {/* ── MOBILE layout: icon left, card right ── */}
-              <div className="flex sm:hidden items-start gap-4">
+              <div className="flex md:hidden items-start gap-4">
                 {/* Dot */}
                 <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/50">
                   <span className="text-lg">{icon}</span>
@@ -166,7 +166,7 @@ function Timeline({ items, icon, isDarkMode, type }: TimelineProps) {
               </div>
 
               {/* ── DESKTOP layout: alternating left/right ── */}
-              <div className={`hidden sm:flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+              <div className={`hidden md:flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
                 {/* Card */}
                 <div className={`w-5/12 ${isLeft ? 'text-right pr-8' : 'text-left pl-8'}`}>
                   <div
