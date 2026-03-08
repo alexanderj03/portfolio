@@ -28,7 +28,7 @@ A personal portfolio website built with **Next.js** and **TypeScript**, showcasi
 
 - **Full-Stack Budget Tracker** — AI-powered budgeting app using Next.js, PostgreSQL, and the OpenAI API
 - **Stronger Brains App** — Mobile/web app built with a team using Agile, React, and the BrainHQ API
-- **AirBRB** — Airbnb clone with listings, search, bookings, and host analytics
+- **Management App** — Personal productivity desktop app built with Tauri 2, React, TypeScript, and SQLite — manage tasks, projects, goals, and ideas stored locally on your machine
 - **Personal Website** — This site
 
 ---
