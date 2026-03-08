@@ -59,16 +59,16 @@ export default function Experience() {
   const { isDarkMode } = useTheme();
 
   return (
-    <section id="experience" className="min-h-screen flex items-center py-20 px-6">
+    <section id="experience" className="min-h-screen flex items-center py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="text-5xl font-bold mb-4 text-center">Resume</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center">Resume</h2>
         <p className={`text-center mb-16 text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
           Here are my work experiences and education.
         </p>
 
         {/* Work Experience */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
             Work Experience
           </h3>
           <Timeline items={workExperience} icon="💼" isDarkMode={isDarkMode} type="work" />
@@ -76,7 +76,7 @@ export default function Experience() {
 
         {/* Education */}
         <div>
-          <h3 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
             Education
           </h3>
           <Timeline items={education} icon="🎓" isDarkMode={isDarkMode} type="education" />
@@ -114,44 +114,93 @@ type TimelineProps = {
 function Timeline({ items, icon, isDarkMode, type }: TimelineProps) {
   return (
     <div className="relative">
-      {/* Vertical line */}
-      <div className={`absolute left-1/2 transform -translate-x-1/2 w-1 h-full ${isDarkMode ? 'bg-slate-700' : 'bg-gray-300'}`} />
+      {/* Vertical line — on mobile sits left-aligned, on desktop centered */}
+      <div
+        className={`absolute left-5 sm:left-1/2 sm:-translate-x-1/2 w-1 h-full ${
+          isDarkMode ? 'bg-slate-700' : 'bg-gray-300'
+        }`}
+      />
 
-      <div className="space-y-12">
+      <div className="space-y-10 sm:space-y-12">
         {items.map((item, idx) => {
           const isLeft = item.side === 'left';
-          const title = type === 'work' ? (item as WorkItem).company : (item as EducationItem).institution;
-          const subtitle = type === 'work' ? (item as WorkItem).role : (item as EducationItem).degree;
+          const title =
+            type === 'work'
+              ? (item as WorkItem).company
+              : (item as EducationItem).institution;
+          const subtitle =
+            type === 'work'
+              ? (item as WorkItem).role
+              : (item as EducationItem).degree;
 
           return (
-            <div key={idx} className={`flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
-              {/* Card */}
-              <div className={`w-5/12 ${isLeft ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                <div className={`p-6 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 ${
-                  isDarkMode ? 'bg-gradient-to-br from-slate-800 to-slate-900' : 'bg-white'
-                }`}>
-                  <h4 className="text-2xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <div key={idx}>
+              {/* ── MOBILE layout: icon left, card right ── */}
+              <div className="flex sm:hidden items-start gap-4">
+                {/* Dot */}
+                <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/50">
+                  <span className="text-lg">{icon}</span>
+                </div>
+
+                {/* Card */}
+                <div
+                  className={`flex-1 p-5 rounded-2xl shadow-lg ${
+                    isDarkMode
+                      ? 'bg-gradient-to-br from-slate-800 to-slate-900'
+                      : 'bg-white'
+                  }`}
+                >
+                  <h4 className="text-xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                     {title}
                   </h4>
-                  <p className={`text-sm mb-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                  <p className={`text-xs mb-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                     {item.period}
                   </p>
-                  {subtitle && <p className="text-lg font-semibold mb-3">{subtitle}</p>}
+                  {subtitle && (
+                    <p className="text-base font-semibold mb-2">{subtitle}</p>
+                  )}
                   <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     {item.description}
                   </p>
                 </div>
               </div>
 
-              {/* Dot */}
-              <div className="w-2/12 flex justify-center">
-                <div className="relative z-10 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/50">
-                  <span className="text-xl">{icon}</span>
+              {/* ── DESKTOP layout: alternating left/right ── */}
+              <div className={`hidden sm:flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+                {/* Card */}
+                <div className={`w-5/12 ${isLeft ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                  <div
+                    className={`p-6 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 ${
+                      isDarkMode
+                        ? 'bg-gradient-to-br from-slate-800 to-slate-900'
+                        : 'bg-white'
+                    }`}
+                  >
+                    <h4 className="text-2xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                      {title}
+                    </h4>
+                    <p className={`text-sm mb-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      {item.period}
+                    </p>
+                    {subtitle && (
+                      <p className="text-lg font-semibold mb-3">{subtitle}</p>
+                    )}
+                    <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Spacer */}
-              <div className="w-5/12" />
+                {/* Dot */}
+                <div className="w-2/12 flex justify-center">
+                  <div className="relative z-10 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/50">
+                    <span className="text-xl">{icon}</span>
+                  </div>
+                </div>
+
+                {/* Spacer */}
+                <div className="w-5/12" />
+              </div>
             </div>
           );
         })}

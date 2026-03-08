@@ -22,10 +22,10 @@ const projects = [
     icon: '🧠',
   },
   {
-    title: 'AirBRB Website',
-    desc: 'An Airbnb clone featuring property listings, advanced search and filters, booking management, guest reviews, and host analytics dashboard',
-    tech: ['JavaScript', 'CSS', 'HTML', 'React', 'Webdesign', 'HTTP'],
-    icon: '📊',
+    title: 'Management App',
+    desc: 'A personal productivity desktop app built with Tauri 2, React, TypeScript, and SQLite. Manage tasks, projects, goals, and ideas all in one place, stored locally on your machine.',
+    tech: ['Tauri 2', 'React', 'TypeScript', 'SQLite'],
+    icon: '📋',
   },
 ];
 
