@@ -36,7 +36,7 @@ A personal portfolio website built with **Next.js** and **TypeScript**, showcasi
 ## Getting Started
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/your-repo-name.git
+git clone git@github.com:alexanderj03/portfolio.git
 cd your-repo-name
 
 # Install dependencies
