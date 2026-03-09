@@ -50,12 +50,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## Deployment
-
-This site is deployed on **Vercel**. Any push to the `main` branch triggers an automatic redeployment.
-
----
-
 ## Contact
 
 Feel free to reach out via the [contact form](https://alexanderjiw.vercel.app/#contact) on the site.
